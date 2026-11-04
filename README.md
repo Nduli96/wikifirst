@@ -1,5 +1,7 @@
 # wikifirst
 
+**English** | [Italiano](README.it.md)
+
 A [Claude Code](https://claude.com/claude-code) skill that makes the agent check what the project already knows before searching its code, and write down what was hard to find.
 
 ![Context tokens read per question. Exact lookups on a small repo: 14% more with a wiki. Broad questions on a small repo: 9% fewer. Known traps on a large repo: 68% fewer.](assets/demo.gif)
