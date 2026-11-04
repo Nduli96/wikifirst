@@ -1,0 +1,37 @@
+group,question_id,setup,passed_key_terms,tool_calls,turns,context_tokens_read,tokens_added_to_context,output_tokens,question,key_terms
+"exact lookup, small repo",q1,no wiki,True,3,2,77015,3623,1159,Which function joins requirement-file lines that end with a backslash? Give the function and its file.,join_lines; req_file
+"exact lookup, small repo",q1,wiki,True,5,4,179568,12058,1482,Which function joins requirement-file lines that end with a backslash? Give the function and its file.,join_lines; req_file
+"exact lookup, small repo",q2,no wiki,True,4,3,118913,5006,1319,"Which method produces the sort key pip uses to rank the candidate distributions of a package? Give the method, its class and its file.",_sort_key; CandidateEvaluator; package_finder
+"exact lookup, small repo",q2,wiki,True,4,3,122942,6360,1187,"Which method produces the sort key pip uses to rank the candidate distributions of a package? Give the method, its class and its file.",_sort_key; CandidateEvaluator; package_finder
+"exact lookup, small repo",q3,no wiki,True,3,3,120016,6436,1264,Which method and file compute the folder path of a link's entry in pip's wheel cache?,_get_cache_path_parts; cache.py
+"exact lookup, small repo",q3,wiki,True,7,4,166483,8481,2548,Which method and file compute the folder path of a link's entry in pip's wheel cache?,_get_cache_path_parts; cache.py
+"exact lookup, small repo",q4,no wiki,True,4,4,176720,11907,1730,"During an install with --require-hashes, which methods check a downloaded file's hash, in which file, and which exception is raised when it does not match?",check_against_path or check_against_chunks; hashes.py; HashMismatch
+"exact lookup, small repo",q4,wiki,True,6,5,208513,8100,2215,"During an install with --require-hashes, which methods check a downloaded file's hash, in which file, and which exception is raised when it does not match?",check_against_path or check_against_chunks; hashes.py; HashMismatch
+"exact lookup, small repo",q5,no wiki,True,4,3,118371,4732,1159,"How does pip install get its dependency resolver? Name the method that creates it, its file, and the modules of the two Resolver implementations it can return.",make_resolver; req_command; resolvelib; legacy
+"exact lookup, small repo",q5,wiki,True,4,3,122776,6745,1356,"How does pip install get its dependency resolver? Name the method that creates it, its file, and the modules of the two Resolver implementations it can return.",make_resolver; req_command; resolvelib; legacy
+"exact lookup, small repo",q6,no wiki,True,4,3,117318,4004,1183,"What HTTP retry settings does pip use? Give the status codes that are retried, the backoff factor, and the file where they are set.",500; 502; 503; 520; 527; 0.25; session.py
+"exact lookup, small repo",q6,wiki,True,4,3,119766,5435,1580,"What HTTP retry settings does pip use? Give the status codes that are retried, the backoff factor, and the file where they are set.",500; 502; 503; 520; 527; 0.25; session.py
+"exact lookup, small repo",q7,no wiki,True,8,4,167649,7978,2418,"How does pip roll back a failed uninstall? Name the classes that track the removed files, the method that restores them, and the file.",StashedUninstallPathSet; UninstallPathSet; rollback; req_uninstall
+"exact lookup, small repo",q7,wiki,True,4,3,121498,5653,1508,"How does pip roll back a failed uninstall? Name the classes that track the removed files, the method that restores them, and the file.",StashedUninstallPathSet; UninstallPathSet; rollback; req_uninstall
+"exact lookup, small repo",q8,no wiki,True,4,3,127736,10077,1592,"Which class creates the isolated environment for building a package, in which file, and which method installs the build requirements into it?",BuildEnvironment; build_env.py; install_requirements
+"exact lookup, small repo",q8,wiki,True,4,3,122261,6089,1692,"Which class creates the isolated environment for building a package, in which file, and which method installs the build requirements into it?",BuildEnvironment; build_env.py; install_requirements
+"broad question, small repo",v1,no wiki,True,4,3,138752,16452,1906,"I want to add a new pip subcommand. What must I change, and what must the new class implement?",commands_dict; CommandInfo; run
+"broad question, small repo",v1,wiki,True,4,3,130145,10821,1610,"I want to add a new pip subcommand. What must I change, and what must the new class implement?",commands_dict; CommandInfo; run
+"broad question, small repo",v2,no wiki,True,12,5,298489,36395,5202,"Walk through the main stages of pip install, from the command to the wheel being on disk. Name the function or method for each stage.",make_requirement_preparer or RequirementPreparer; make_resolver; resolve; install_given_reqs; install_wheel
+"broad question, small repo",v2,wiki,True,5,4,164089,7426,3068,"Walk through the main stages of pip install, from the command to the wheel being on disk. Name the function or method for each stage.",make_requirement_preparer or RequirementPreparer; make_resolver; resolve; install_given_reqs; install_wheel
+"broad question, small repo",v3,no wiki,True,6,4,211358,25659,2174,"How does pip find credentials for a private index, and which sources does it try?",MultiDomainBasicAuth or auth.py; netrc; keyring
+"broad question, small repo",v3,wiki,True,7,6,252385,8046,2655,"How does pip find credentials for a private index, and which sources does it try?",MultiDomainBasicAuth or auth.py; netrc; keyring
+"broad question, small repo",v4,no wiki,True,4,3,132366,12244,1467,"A package's build backend needs extra requirements. Where does pip ask the backend for them, and which function installs them?",get_requires_for_build; _install_build_reqs or install_requirements
+"broad question, small repo",v4,wiki,True,5,4,161119,5417,1731,"A package's build backend needs extra requirements. Where does pip ask the backend for them, and which function installs them?",get_requires_for_build; _install_build_reqs or install_requirements
+"known trap or recurring job, large private repo",s1,no wiki,True,23,13,1146229,71813,8831,private,private
+"known trap or recurring job, large private repo",s1,wiki,True,8,5,292815,31520,3262,private,private
+"known trap or recurring job, large private repo",s2,no wiki,True,8,6,255197,9902,2639,private,private
+"known trap or recurring job, large private repo",s2,wiki,True,6,4,165167,6944,2297,private,private
+"known trap or recurring job, large private repo",s3,no wiki,True,17,10,611155,38300,4915,private,private
+"known trap or recurring job, large private repo",s3,wiki,True,7,4,180684,12808,2912,private,private
+"known trap or recurring job, large private repo",s4,no wiki,True,14,9,489642,28704,5627,private,private
+"known trap or recurring job, large private repo",s4,wiki,True,10,6,341113,27365,3338,private,private
+"known trap or recurring job, large private repo",s5,no wiki,True,18,12,767358,52295,9881,private,private
+"known trap or recurring job, large private repo",s5,wiki,True,6,3,148592,19783,2024,private,private
+"known trap or recurring job, large private repo",s6,no wiki,True,27,15,938945,39913,9069,private,private
+"known trap or recurring job, large private repo",s6,wiki,True,6,5,236047,15234,2613,private,private
