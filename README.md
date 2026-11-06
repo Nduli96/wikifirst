@@ -55,25 +55,24 @@ What this shows:
 
 ## Install
 
-From the root of your project:
+Clone it into your personal skills, so it works in every project, and add the subagent:
 
 ```bash
-git clone --depth 1 https://github.com/Nduli96/wikifirst .claude/skills/wikifirst
-rm -rf .claude/skills/wikifirst/.git
-mkdir -p .claude/agents
-cp .claude/skills/wikifirst/agents/wiki-search.md .claude/agents/
+git clone https://github.com/Nduli96/wikifirst ~/.claude/skills/wikifirst
+mkdir -p ~/.claude/agents
+cp ~/.claude/skills/wikifirst/agents/wiki-search.md ~/.claude/agents/
 ```
 
-Start a new session, so that Claude Code loads the subagent, then type `/wikifirst`.
+Start a new session, so that Claude Code loads the subagent, then type `/wikifirst`. If a project's own instructions say where documentation lives or when to write it, they win over the skill.
 
 ## Starting a wiki
 
 You don't need to document anything up front. The wiki can grow from the notes the agent writes as it works, and those are the kind of notes that gave the saving above.
 
-If you want a first pass over a large repository, `document-repo.bat` does one on Windows. Run it from inside the repository, with a spending limit in US dollars (the default is 5):
+If you want a first pass over a large repository, `document-repo.bat` does one on Windows. Run it in Command Prompt from inside the repository, with a spending limit in US dollars (the default is 5):
 
-```bash
-.claude\skills\wikifirst\document-repo.bat 5
+```bat
+%USERPROFILE%\.claude\skills\wikifirst\document-repo.bat 5
 ```
 
 It shows the repository, the number of files and the limit, explains what will happen, and does nothing unless you type `YES`. There is no flag to skip this. Only run it on a repository you own or have permission to document.
@@ -90,7 +89,7 @@ If `claude` isn't on your PATH, set `CLAUDE_CMD` to the full path of `claude.exe
 `check_wiki.py` compares each note with the files it describes, using git only, so it costs no tokens. Run it from inside the repository:
 
 ```bash
-python .claude/skills/wikifirst/check_wiki.py
+python ~/.claude/skills/wikifirst/check_wiki.py
 ```
 
 It reports source files that changed since the note was last checked, files that no longer exist, and notes missing from the index. It needs Python 3.7+ and git.

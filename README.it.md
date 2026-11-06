@@ -55,25 +55,24 @@ Cosa dimostra:
 
 ## Installazione
 
-Dalla cartella principale del tuo progetto:
+Clonala nelle tue skill personali, così funziona in ogni progetto, e aggiungi il subagent:
 
 ```bash
-git clone --depth 1 https://github.com/Nduli96/wikifirst .claude/skills/wikifirst
-rm -rf .claude/skills/wikifirst/.git
-mkdir -p .claude/agents
-cp .claude/skills/wikifirst/agents/wiki-search.md .claude/agents/
+git clone https://github.com/Nduli96/wikifirst ~/.claude/skills/wikifirst
+mkdir -p ~/.claude/agents
+cp ~/.claude/skills/wikifirst/agents/wiki-search.md ~/.claude/agents/
 ```
 
-Apri una nuova sessione, così Claude Code carica il subagent, poi scrivi `/wikifirst`.
+Apri una nuova sessione, così Claude Code carica il subagent, poi scrivi `/wikifirst`. Se le istruzioni di un progetto dicono dove sta la documentazione o quando scriverla, valgono più della skill.
 
 ## Iniziare una wiki
 
 Non serve documentare nulla in anticipo. La wiki può crescere dalle note che l'agente scrive mentre lavora, e sono proprio quelle che hanno dato il risparmio qui sopra.
 
-Se vuoi una prima passata su una repo grande, `document-repo.bat` la fa su Windows. Lancialo dall'interno della repo, con un tetto di spesa in dollari USA (il valore predefinito è 5):
+Se vuoi una prima passata su una repo grande, `document-repo.bat` la fa su Windows. Lancialo dal Prompt dei comandi, dall'interno della repo, con un tetto di spesa in dollari USA (il valore predefinito è 5):
 
-```bash
-.claude\skills\wikifirst\document-repo.bat 5
+```bat
+%USERPROFILE%\.claude\skills\wikifirst\document-repo.bat 5
 ```
 
 Mostra la repo, il numero di file e il tetto, spiega cosa succederà e non fa nulla finché non scrivi `YES`. Non c'è nessuna opzione per saltare questo passaggio. Lancialo solo su una repo tua o che hai il permesso di documentare.
@@ -90,7 +89,7 @@ Se `claude` non è nel PATH, imposta `CLAUDE_CMD` con il percorso completo di `c
 `check_wiki.py` confronta ogni nota con i file che descrive usando solo git, quindi non consuma token. Lancialo dall'interno della repo:
 
 ```bash
-python .claude/skills/wikifirst/check_wiki.py
+python ~/.claude/skills/wikifirst/check_wiki.py
 ```
 
 Segnala i file di origine cambiati dall'ultimo controllo della nota, i file che non esistono più e le note assenti dall'indice. Richiede Python 3.7+ e git.

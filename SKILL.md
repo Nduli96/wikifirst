@@ -7,7 +7,7 @@ description: Look in the repository's wiki before searching its code, and write 
 
 Do not search for what is already known. Do not make the next session search for what you just learned.
 
-The wiki is `docs/wiki/`. `INDEX.md` lists its notes. If it does not exist, say so once in one line and work normally.
+The wiki is `docs/wiki/`. `INDEX.md` lists its notes. If it does not exist, say so once in one line and work normally. If the project's own instructions say where documentation lives or when to write it, they win over this skill.
 
 ## Before searching the code
 
